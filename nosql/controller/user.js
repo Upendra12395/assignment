@@ -55,7 +55,6 @@ module.exports.logIn = (req, res) => {
                     if (!isMatch) {
                         res.status(401).json({ message: 'Email or password incorrect' })
                     } else {
-                        user.save()
                         jwt.sign(
                             { id: user._id },
                             config.JWT_KEY,
